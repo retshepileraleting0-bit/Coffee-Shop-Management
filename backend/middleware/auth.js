@@ -53,3 +53,4 @@ module.exports = {
   getExpectedToken,
   STAFF_PASSWORD
 };
+

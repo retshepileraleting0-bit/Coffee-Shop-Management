@@ -123,3 +123,4 @@ export default function CartDrawer({ isOpen, onClose, onOpenCheckout }) {
     </div>
   );
 }
+

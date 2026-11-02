@@ -23,7 +23,7 @@ const orderRoutes = require('./routes/orderRoutes');
 const { notFoundHandler, globalErrorHandler } = require('./middleware/errorHandler');
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // ============================================================================
 // MIDDLEWARE CONFIGURATION
@@ -118,3 +118,4 @@ if (require.main === module) {
 }
 
 module.exports = app;
+

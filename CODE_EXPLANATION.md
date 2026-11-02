@@ -457,3 +457,4 @@ npm test
 9. **Status Lifecycle:** Tests `PATCH /api/orders/:id/status` transitioning status to `Preparing`.
 10. **Daily Summary:** Tests `GET /api/orders/summary` calculation of sales and status counts.
 11. **Item Deletion:** Tests `DELETE /api/menu/:id` and confirms `404 Not Found` upon subsequent lookup.
+

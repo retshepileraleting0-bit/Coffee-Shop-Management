@@ -240,3 +240,4 @@ npm run dev
 | **Member 2** | *[Student ID]* | Information Technology | Key-Value NoSQL database schema, automated test suite, error handling |
 | **Member 3** | *[Student ID]* | Software Engineering | React frontend user interface, menu browsing, cart context, modal flow |
 | **Member 4** | *[Student ID]* | Software Engineering | Staff dashboard, live order tracking, Fetch API integration, documentation |
+

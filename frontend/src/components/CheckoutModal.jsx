@@ -234,3 +234,4 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
     </div>
   );
 }
+

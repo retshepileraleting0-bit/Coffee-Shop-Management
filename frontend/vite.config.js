@@ -9,9 +9,10 @@ export default defineConfig({
     proxy: {
       // Optional local proxy during development
       '/api': {
-        target: 'http://localhost:5000',
+        target: 'http://localhost:5001',
         changeOrigin: true
       }
     }
   }
 });
+

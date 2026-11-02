@@ -138,3 +138,4 @@ When demonstrating the project to Mr. Mofolo or Mr. Takalimane:
 7. **Daily Analytics Review:**
    - Switch to the *Daily Summary* tab.
    - Show the total revenue, order count breakdown, and top-selling beverages.
+

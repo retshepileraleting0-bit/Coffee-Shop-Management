@@ -10,7 +10,7 @@
  */
 
 // Base URL configured via environment variable (or defaults to local backend)
-const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api';
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001/api';
 
 /**
  * Generic helper wrapper around native fetch
@@ -212,3 +212,4 @@ export async function verifyStaffSession(token) {
   });
   return result;
 }
+

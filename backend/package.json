@@ -1,0 +1,20 @@
+{
+  "name": "coffee-shop-backend",
+  "version": "1.0.0",
+  "description": "Express.js REST API with Key-Value NoSQL database for Coffee Shop Management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test tests/api.test.js"
+  },
+  "keywords": ["express", "nosql", "redis", "rest-api", "coffee-shop"],
+  "author": "Group Assignment Team",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "ioredis": "^5.4.1"
+  }
+}

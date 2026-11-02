@@ -1,4 +1,4 @@
-# 📖 Comprehensive Code Explanation: AromaCraft Coffee Shop
+# Comprehensive Code Explanation: AromaCraft Coffee Shop
 
 This document provides a clear, beginner-friendly, and in-depth explanation of every significant piece of code across the AromaCraft full-stack web application. It is written in plain English to assist students and examiners during code walkthroughs, viva defenses, and grading.
 
@@ -32,7 +32,7 @@ const express = require('express');
 const cors = require('cors');
 ```
 - `dotenv.config()`: Reads environment variables from the `.env` file (e.g. `PORT`, `REDIS_URL`, `STAFF_PASSWORD`) into `process.env`.
-- `cors()`: Configures Cross-Origin Resource Sharing. Because the React frontend runs on port 5173 (or a separate Vercel domain) and the Express backend runs on port 5000 (or Render), browsers by default block cross-domain requests for security. `cors()` explicitly instructs the browser that requests from our frontend are safe and permitted.
+- `cors()`: Configures Cross-Origin Resource Sharing. Because the React frontend runs on port 5173 (or a separate Vercel domain) and the Express backend runs on port 5001 (or Render), browsers by default block cross-domain requests for security. `cors()` explicitly instructs the browser that requests from our frontend are safe and permitted.
 
 ```javascript
 app.use(express.json());
@@ -270,7 +270,7 @@ router.patch('/:id/status', requireStaffAuth, async (req, res, next) => {
   res.json({ success: true, data: order });
 });
 ```
-- Allows staff to progress orders through the four mandatory stages: `Pending` ➔ `Preparing` ➔ `Ready` ➔ `Collected`.
+- Allows staff to progress orders through the four mandatory stages: `Pending` -> `Preparing` -> `Ready` -> `Collected`.
 - Saves the updated order back into the Key-Value database.
 
 #### `GET /api/orders/summary` (Daily Analytics)
@@ -398,7 +398,7 @@ useEffect(() => {
 ### `OrderStatusTracker.jsx`
 - Provides an intuitive customer order tracker.
 - Takes an order number (e.g. `ORD-8419`) and displays a 4-stage visual progress stepper:
-  `Pending` ➔ `Preparing` ➔ `Ready` ➔ `Collected`.
+  `Pending` -> `Preparing` -> `Ready` -> `Collected`.
 - Allows customers to click "Refresh" to see status updates live as the barista prepares their beverage.
 
 ---
@@ -411,7 +411,7 @@ useEffect(() => {
 
 ### `MenuManagement.jsx`
 - Complete menu administrative interface:
-  - **Add New Item:** Modal form allowing staff to add beverages/pastries with name, category, price, description, and image URL.
+  - **Add New Item:** Modal form allowing staff to add beverages/pastries with name, category, price in Maloti, description, and image URL.
   - **Edit Item:** Pre-fills the modal to modify prices or descriptions.
   - **Quick Stock Toggle:** One-click button in the table to instantly toggle an item between `In Stock` and `Sold Out`.
   - **Delete Item:** Removes an item from the database with confirmation prompt.
@@ -420,7 +420,7 @@ useEffect(() => {
 - The Barista Kitchen Display:
   - Displays incoming orders as cards with color-coded status borders.
   - Shows customer name, table number or takeaway label, placed time, and special barista instructions.
-  - **One-Click Progression:** Baristas can click "Start Preparing ➔", "Mark Ready for Pickup ➔", or "Mark Collected ✓" to advance order states in the NoSQL database.
+  - **One-Click Progression:** Baristas can click "Start Preparing", "Mark Ready for Pickup", or "Mark Collected" to advance order states in the NoSQL database.
   - Auto-refreshes every 15 seconds to catch new incoming orders.
 
 ### `DailySummary.jsx`

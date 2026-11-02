@@ -46,7 +46,7 @@ export default function MenuItemCard({ item }) {
       <div className="card-body">
         <div className="card-header">
           <h3 className="card-title">{item.name}</h3>
-          <span className="card-price">${Number(item.price).toFixed(2)}</span>
+          <span className="card-price">M{Number(item.price).toFixed(2)}</span>
         </div>
 
         <p className="card-description">{item.description}</p>
@@ -64,11 +64,11 @@ export default function MenuItemCard({ item }) {
             disabled={!item.available}
           >
             {justAdded ? (
-              '✓ Added!'
+              'Added'
             ) : currentQuantityInCart > 0 ? (
-              `+ Add More (${currentQuantityInCart})`
+              `Add More (${currentQuantityInCart})`
             ) : (
-              '+ Add to Cart'
+              'Add to Cart'
             )}
           </button>
         </div>

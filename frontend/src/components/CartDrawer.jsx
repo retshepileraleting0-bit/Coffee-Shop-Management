@@ -20,8 +20,7 @@ export default function CartDrawer({ isOpen, onClose, onOpenCheckout }) {
         {/* Drawer Header */}
         <div className="drawer-header">
           <div className="drawer-title-wrap">
-            <span className="drawer-icon">🛍️</span>
-            <h2>Your Order Basket</h2>
+            <h2>Order Basket</h2>
           </div>
           <button className="btn-close-drawer" onClick={onClose} aria-label="Close cart">
             ✕
@@ -32,9 +31,15 @@ export default function CartDrawer({ isOpen, onClose, onOpenCheckout }) {
         <div className="drawer-body">
           {cartItems.length === 0 ? (
             <div className="cart-empty-message">
-              <span className="empty-cart-icon">🛒</span>
+              <div className="empty-cart-icon">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              </div>
               <h3>Your basket is empty</h3>
-              <p>Add some fresh coffee or a warm croissant from the menu!</p>
+              <p>Add some fresh coffee or a warm croissant from the menu.</p>
               <button className="btn-browse-menu" onClick={onClose}>
                 Browse Menu
               </button>
@@ -50,7 +55,7 @@ export default function CartDrawer({ isOpen, onClose, onOpenCheckout }) {
                   />
                   <div className="cart-item-info">
                     <h4 className="cart-item-name">{item.name}</h4>
-                    <span className="cart-item-unit-price">${Number(item.price).toFixed(2)} each</span>
+                    <span className="cart-item-unit-price">M{Number(item.price).toFixed(2)} each</span>
                     <div className="cart-qty-controls">
                       <button
                         className="qty-btn"
@@ -77,7 +82,7 @@ export default function CartDrawer({ isOpen, onClose, onOpenCheckout }) {
                     </div>
                   </div>
                   <div className="cart-item-total">
-                    ${(item.price * item.quantity).toFixed(2)}
+                    M{(item.price * item.quantity).toFixed(2)}
                   </div>
                 </div>
               ))}
@@ -91,15 +96,15 @@ export default function CartDrawer({ isOpen, onClose, onOpenCheckout }) {
             <div className="summary-breakdown">
               <div className="summary-line">
                 <span>Subtotal</span>
-                <span>${subtotal.toFixed(2)}</span>
+                <span>M{subtotal.toFixed(2)}</span>
               </div>
               <div className="summary-line">
                 <span>Estimated Tax (5%)</span>
-                <span>${tax.toFixed(2)}</span>
+                <span>M{tax.toFixed(2)}</span>
               </div>
               <div className="summary-line total-line">
                 <span>Total Due</span>
-                <span>${totalAmount.toFixed(2)}</span>
+                <span>M{totalAmount.toFixed(2)}</span>
               </div>
             </div>
 
@@ -114,7 +119,7 @@ export default function CartDrawer({ isOpen, onClose, onOpenCheckout }) {
                   onOpenCheckout();
                 }}
               >
-                Proceed to Checkout →
+                Proceed to Checkout
               </button>
             </div>
           </div>

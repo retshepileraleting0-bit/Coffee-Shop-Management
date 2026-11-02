@@ -52,11 +52,11 @@ export default function MenuList() {
       {/* Hero Welcome Banner */}
       <section className="hero-section">
         <div className="hero-content">
-          <span className="hero-pill">🌿 Freshly Brewed Everyday</span>
+          <span className="hero-pill">Freshly Brewed Everyday</span>
           <h1 className="hero-title">Crafted with Passion, Served with Care.</h1>
           <p className="hero-description">
             Explore our curated menu of slow-roasted single-origin coffees, artisanal teas,
-            and freshly baked French pastries. Order directly online for dine-in or quick pickup!
+            and freshly baked French pastries. Order directly online for dine-in or quick pickup in Maseru!
           </p>
         </div>
       </section>
@@ -77,7 +77,12 @@ export default function MenuList() {
 
         <div className="search-and-stock-controls">
           <div className="search-box">
-            <span className="search-icon">🔍</span>
+            <span className="search-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </span>
             <input
               type="text"
               placeholder="Search coffee or snacks..."
@@ -107,14 +112,14 @@ export default function MenuList() {
       {loading && (
         <div className="loading-state">
           <div className="spinner"></div>
-          <p>Brewing your menu items...</p>
+          <p>Loading menu items...</p>
         </div>
       )}
 
       {/* Error state */}
       {error && !loading && (
         <div className="error-card">
-          <p className="error-text">⚠️ {error}</p>
+          <p className="error-text">{error}</p>
           <button className="btn-retry" onClick={loadMenu}>
             Try Again
           </button>
@@ -133,7 +138,12 @@ export default function MenuList() {
       {/* Empty State */}
       {!loading && !error && filteredItems.length === 0 && (
         <div className="empty-state">
-          <div className="empty-icon">☕</div>
+          <div className="empty-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 8h1a4 4 0 0 1 0 8h-1"></path>
+              <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path>
+            </svg>
+          </div>
           <h3>No items found</h3>
           <p>Try selecting another category or clearing your search filter.</p>
           <button

@@ -121,7 +121,7 @@ test('5. POST /api/menu with staff token should successfully add a new item', as
     body: JSON.stringify({
       name: 'Hazelnut Cortado',
       category: 'Hot Coffee',
-      price: 4.20,
+      price: 42.00,
       description: 'Equal parts espresso and hazelnut warm milk',
       available: true
     })
@@ -139,14 +139,14 @@ test('6. PUT /api/menu/:id should update menu item details', async () => {
     method: 'PUT',
     headers: { Authorization: `Bearer ${staffToken}` },
     body: JSON.stringify({
-      price: 4.80,
+      price: 48.00,
       available: false
     })
   });
 
   assert.equal(res.status, 200);
   assert.equal(res.data.success, true);
-  assert.equal(res.data.data.price, 4.80);
+  assert.equal(res.data.data.price, 48.00);
   assert.equal(res.data.data.available, false);
 });
 

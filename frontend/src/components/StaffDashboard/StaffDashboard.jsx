@@ -49,19 +49,19 @@ export default function StaffDashboard() {
             className={`tab-btn ${activeTab === 'orders' ? 'active' : ''}`}
             onClick={() => setActiveTab('orders')}
           >
-            📋 Orders & Kitchen
+            Orders & Kitchen
           </button>
           <button
             className={`tab-btn ${activeTab === 'menu' ? 'active' : ''}`}
             onClick={() => setActiveTab('menu')}
           >
-            ☕ Menu & Prices
+            Menu & Prices
           </button>
           <button
             className={`tab-btn ${activeTab === 'summary' ? 'active' : ''}`}
             onClick={() => setActiveTab('summary')}
           >
-            📊 Daily Summary
+            Daily Summary
           </button>
           <button className="tab-btn-logout" onClick={logout} title="Sign Out">
             Sign Out

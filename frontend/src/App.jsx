@@ -66,7 +66,7 @@ export default function App() {
           <footer className="app-footer">
             <div className="footer-content">
               <div className="footer-brand">
-                <h3>☕ AromaCraft Coffee & Roastery</h3>
+                <h3>AromaCraft Coffee & Roastery</h3>
                 <p>Full-Stack Web Application Assignment (BIWA2110)</p>
               </div>
 

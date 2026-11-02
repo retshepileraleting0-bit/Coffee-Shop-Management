@@ -78,10 +78,14 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
         {/* If order is confirmed, show confirmation view */}
         {confirmedOrder ? (
           <div className="order-confirmation-content">
-            <div className="confirmation-badge">✓</div>
-            <h2 className="confirmation-title">Order Placed Successfully!</h2>
+            <div className="confirmation-badge">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h2 className="confirmation-title">Order Placed Successfully</h2>
             <p className="confirmation-subtitle">
-              Thank you, <strong>{confirmedOrder.customerName}</strong>! Our baristas have received your order.
+              Thank you, <strong>{confirmedOrder.customerName}</strong>! Your order has been recorded.
             </p>
 
             <div className="order-number-banner">
@@ -97,7 +101,7 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
               </div>
               <div className="summary-row">
                 <span>Total Amount:</span>
-                <strong>${Number(confirmedOrder.totalAmount).toFixed(2)}</strong>
+                <strong>M{Number(confirmedOrder.totalAmount).toFixed(2)}</strong>
               </div>
               <div className="summary-row">
                 <span>Items:</span>
@@ -108,7 +112,7 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
             </div>
 
             <p className="tracking-hint">
-              💡 Keep your order number handy. You can track preparation status live on the Track Order page!
+              Keep your order number handy. You can track preparation status live on the Track Order page.
             </p>
 
             <div className="confirmation-actions">
@@ -119,7 +123,7 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
                   onTrackOrder(confirmedOrder.id);
                 }}
               >
-                Track Live Status →
+                Track Live Status
               </button>
               <button className="btn-close-modal" onClick={handleClose}>
                 Back to Menu
@@ -138,7 +142,7 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
 
             {errorMessage && (
               <div className="form-error-banner">
-                ⚠️ {errorMessage}
+                {errorMessage}
               </div>
             )}
 
@@ -171,7 +175,7 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
                       checked={orderType === 'Takeaway'}
                       onChange={() => setOrderType('Takeaway')}
                     />
-                    <span>🥡 Takeaway / Pickup</span>
+                    <span>Takeaway / Pickup</span>
                   </label>
                   <label className={`radio-tile ${orderType === 'Dine-in' ? 'active' : ''}`}>
                     <input
@@ -181,7 +185,7 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
                       checked={orderType === 'Dine-in'}
                       onChange={() => setOrderType('Dine-in')}
                     />
-                    <span>🍽️ Dine-in Table</span>
+                    <span>Dine-in Table</span>
                   </label>
                 </div>
               </div>
@@ -215,7 +219,7 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
               {/* Order summary bar */}
               <div className="checkout-total-bar">
                 <span>Items in Order ({cartItems.reduce((a, b) => a + b.quantity, 0)})</span>
-                <span className="total-price-large">${totalAmount.toFixed(2)}</span>
+                <span className="total-price-large">M{totalAmount.toFixed(2)}</span>
               </div>
 
               {/* Submit Buttons */}
@@ -224,7 +228,7 @@ export default function CheckoutModal({ isOpen, onClose, onTrackOrder }) {
                   Cancel
                 </button>
                 <button type="submit" className="btn-submit-order" disabled={submitting}>
-                  {submitting ? 'Placing Order...' : `Pay & Place Order ($${totalAmount.toFixed(2)})`}
+                  {submitting ? 'Placing Order...' : `Place Order (M${totalAmount.toFixed(2)})`}
                 </button>
               </div>
             </form>

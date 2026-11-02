@@ -43,11 +43,11 @@ export default function DailySummary() {
           </p>
         </div>
         <button className="btn-refresh-orders" onClick={loadSummary} disabled={loading}>
-          🔄 Refresh Stats
+          Refresh Stats
         </button>
       </div>
 
-      {error && <div className="action-error-banner">⚠️ {error}</div>}
+      {error && <div className="action-error-banner">{error}</div>}
 
       {loading && !summary ? (
         <div className="panel-loading">Calculating store metrics...</div>
@@ -56,21 +56,18 @@ export default function DailySummary() {
           {/* Key Metric Cards */}
           <div className="metrics-grid">
             <div className="metric-card metric-revenue">
-              <span className="metric-icon">💵</span>
               <span className="metric-label">Total Revenue</span>
-              <h2 className="metric-value">${Number(summary.totalRevenue || 0).toFixed(2)}</h2>
-              <small className="metric-note">Gross sales including tax</small>
+              <h2 className="metric-value">M{Number(summary.totalRevenue || 0).toFixed(2)}</h2>
+              <small className="metric-note">Gross sales in Maloti including tax</small>
             </div>
 
             <div className="metric-card metric-orders">
-              <span className="metric-icon">📋</span>
               <span className="metric-label">Total Orders</span>
               <h2 className="metric-value">{summary.totalOrders || 0}</h2>
               <small className="metric-note">Recorded in Key-Value store</small>
             </div>
 
             <div className="metric-card metric-pending">
-              <span className="metric-icon">⏳</span>
               <span className="metric-label">Pending / Active</span>
               <h2 className="metric-value">
                 {(summary.statusCounts?.Pending || 0) + (summary.statusCounts?.Preparing || 0)}
@@ -79,7 +76,6 @@ export default function DailySummary() {
             </div>
 
             <div className="metric-card metric-ready">
-              <span className="metric-icon">☕</span>
               <span className="metric-label">Ready for Pickup</span>
               <h2 className="metric-value">{summary.statusCounts?.Ready || 0}</h2>
               <small className="metric-note">Awaiting customer collection</small>

@@ -1,4 +1,4 @@
-# 📑 BIWA2110 Final Project Report: Coffee Shop Management System
+# BIWA2110 Final Project Report: Coffee Shop Management System
 
 **Course:** BIWA2110 — Web Application Development  
 **Department:** Faculty of Information & Communication Technology  
@@ -54,12 +54,12 @@ The project demonstrates full-stack architecture adhering to the BIWA2110 curric
 3. **Cart & Price Calculation:** Interactive slide-out cart drawer with increment, decrement, and item removal controls. Automatically recalculates item subtotals, a 5% tax, and total amount due. Cart contents persist in `localStorage`.
 4. **Order Placement Modal:** Simple checkout form capturing customer name, order type (*Takeaway* or *Dine-in* with table number), and barista notes (*e.g., Oat milk, extra hot*).
 5. **Order Confirmation & Unique Order Number:** Immediate visual confirmation with a unique human-readable order number (*e.g., `ORD-8419`*).
-6. **Live Order Status Tracking:** Dedicated tracking view where customers can enter any order number to check progress through a 4-step stepper (*Pending* ➔ *Preparing* ➔ *Ready* ➔ *Collected*).
+6. **Live Order Status Tracking:** Dedicated tracking view where customers can enter any order number to check progress through a 4-step stepper (*Pending* -> *Preparing* -> *Ready* -> *Collected*).
 
 ### 4.2 Staff Dashboard & Kitchen Display
 1. **Protected Staff Authentication:** Restricts staff functionality behind password protection (`barista2024`).
 2. **Kitchen Order Display:** Live feed of incoming orders displaying item quantities, customer names, dine-in table numbers, and custom notes.
-3. **One-Click Order Status Progression:** Baristas can advance orders with a single click (*Start Preparing* ➔ *Mark Ready* ➔ *Mark Collected*).
+3. **One-Click Order Status Progression:** Baristas can advance orders with a single click (*Start Preparing* -> *Mark Ready* -> *Mark Collected*).
 4. **Menu Management (CRUD):** Staff can add new drinks/pastries, edit prices and descriptions, instantly toggle items between *In Stock* and *Sold Out*, or delete items.
 5. **Daily Sales Analytics:** Aggregates total daily revenue, order volumes, status distributions, and highlights the Top 5 best-selling beverages.
 
@@ -108,7 +108,7 @@ All 11 automated test cases passed successfully using Node.js's native test runn
 When demonstrating the project to Mr. Mofolo or Mr. Takalimane:
 
 1. **Verify Backend Health:**
-   - Open browser or terminal to `http://localhost:5000/api/health` (or live Render URL).
+   - Open browser or terminal to `http://localhost:5001/api/health` (or live Render URL).
    - Point out `status: "ok"` and database connection status.
 2. **Customer Browsing & Filtering:**
    - Open the React frontend (`http://localhost:5173`).
@@ -117,25 +117,25 @@ When demonstrating the project to Mr. Mofolo or Mr. Takalimane:
 3. **Placing an Order:**
    - Add a *Vanilla Cold Brew* and *Butter Croissant* to the cart.
    - Open the cart drawer, increase the Cold Brew quantity to 2, and click *Proceed to Checkout*.
-   - Enter Customer Name (*e.g. "Retshepile"*), select *Takeaway*, add note *"Extra napkin"*, and click *Pay & Place Order*.
+   - Enter Customer Name (*e.g. "Retshepile"*), select *Takeaway*, add note *"Extra napkin"*, and click *Place Order*.
    - Note the assigned Order Number (*e.g. `ORD-5243`*).
 4. **Live Customer Order Tracking:**
    - Click *Track Live Status* on the confirmation modal.
    - Observe the stepper at step 1: **Pending**.
 5. **Staff Kitchen Display & Status Update:**
-   - Click **🔐 Staff Portal** in the navbar.
+   - Click **Staff Portal** in the navbar.
    - Enter password `barista2024` and sign in.
    - View the new order under the *Orders & Kitchen* tab.
-   - Click **Start Preparing ➔** (status transitions to *Preparing*).
+   - Click **Start Preparing** (status transitions to *Preparing*).
    - In another tab, refresh the customer tracking page to show the stepper moved to *Preparing*.
-   - Return to staff portal and click **Mark Ready for Pickup ➔**.
+   - Return to staff portal and click **Mark Ready for Pickup**.
 6. **Menu Item CRUD Demonstration:**
    - Switch to the *Menu & Prices* tab.
-   - Click **+ Add New Item**, enter *"Lavender Honey Latte"*, price `$4.80`, category *Hot Coffee*, and save.
+   - Click **+ Add New Item**, enter *"Lavender Honey Latte"*, price `M48.00`, category *Hot Coffee*, and save.
    - Verify the item appears immediately in the table.
    - Click the stock toggle to switch it from *In Stock* to *Sold Out*.
-   - Edit the price to `$4.95`, then delete the test item.
+   - Edit the price to `M49.50`, then delete the test item.
 7. **Daily Analytics Review:**
    - Switch to the *Daily Summary* tab.
-   - Show the total revenue, order count breakdown, and top-selling beverages.
+   - Show the total revenue in Maloti, order count breakdown, and top-selling beverages.
 

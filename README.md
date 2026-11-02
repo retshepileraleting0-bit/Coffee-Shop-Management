@@ -1,4 +1,4 @@
-# ☕ AromaCraft - Coffee Shop Management Web Application
+# AromaCraft - Coffee Shop Management Web Application
 > **Course:** BIWA2110 — Web Application Development  
 > **Faculty:** Faculty of Information & Communication Technology  
 > **Departments:** BSc. in Information Technology / BSc. in Software Engineering and Multimedia  
@@ -8,11 +8,11 @@
 ---
 
 ## 1. Project Overview & Scenario
-**AromaCraft** is a modern, responsive full-stack web application designed for a local artisanal coffee shop. Before this system, staff took orders manually using pen and paper, which caused miscommunications, price discrepancies, and confusion over which orders were pending, currently being prepared, or ready for customer collection.
+**AromaCraft** is a modern, responsive full-stack web application designed for an artisanal coffee shop based in Maseru, Lesotho. Before this system, staff took orders manually using pen and paper, which caused miscommunications, price discrepancies, and confusion over which orders were pending, currently being prepared, or ready for customer collection.
 
 This application provides:
-1. **Customer Web Interface**: Allows customers to explore hot coffees, iced cold brews, artisanal teas, and fresh pastries; view live stock availability and pricing; add items to a shopping cart; customize their order (takeaway vs. dine-in with table numbers and special notes); place an order; and track live preparation progress using a unique Order Number (`ORD-XXXX`).
-2. **Staff Kitchen & Manager Portal**: Secure dashboard protected with staff credentials allowing baristas to view incoming orders in real time, advance orders through their lifecycle (`Pending` ➔ `Preparing` ➔ `Ready` ➔ `Collected`), manage menu items (create new items, edit names/prices/descriptions, toggle stock availability, and delete items), and review daily order totals and sales analytics.
+1. **Customer Web Interface**: Allows customers to explore hot coffees, iced cold brews, artisanal teas, and fresh pastries priced in Lesotho Loti (LSL / M); view live stock availability and pricing; add items to a shopping cart; customize their order (takeaway vs. dine-in with table numbers and special notes); place an order; and track live preparation progress using a unique Order Number (`ORD-XXXX`).
+2. **Staff Kitchen & Manager Portal**: Secure dashboard protected with staff credentials allowing baristas to view incoming orders in real time, advance orders through their lifecycle (`Pending` -> `Preparing` -> `Ready` -> `Collected`), manage menu items (create new items, edit names/prices/descriptions, toggle stock availability, and delete items), and review daily order totals and sales analytics.
 3. **Key-Value NoSQL Database**: Stores menu items and orders using unique keys and JSON values. Built with seamless dual-mode persistence (Redis for cloud hosting on Render + persistent disk storage for frictionless local evaluation).
 
 ---
@@ -91,7 +91,7 @@ As required by the assignment guidelines, the database is designed according to 
   "id": "menu-1",
   "name": "Classic Espresso",
   "category": "Hot Coffee",
-  "price": 2.50,
+  "price": 25.00,
   "description": "Rich, concentrated shot of freshly roasted Arabica beans with a thick golden crema.",
   "available": true,
   "imageUrl": "https://images.unsplash.com/photo-1510707577719-ae7c14805e3a?w=400"
@@ -110,14 +110,14 @@ As required by the assignment guidelines, the database is designed according to 
     {
       "id": "menu-1",
       "name": "Classic Espresso",
-      "price": 2.50,
+      "price": 25.00,
       "quantity": 2,
-      "lineTotal": 5.00
+      "lineTotal": 50.00
     }
   ],
-  "subtotal": 5.00,
-  "tax": 0.25,
-  "totalAmount": 5.25,
+  "subtotal": 50.00,
+  "tax": 2.50,
+  "totalAmount": 52.50,
   "status": "Pending",
   "createdAt": "2026-11-02T13:20:00.000Z",
   "updatedAt": "2026-11-02T13:20:00.000Z"
@@ -141,7 +141,7 @@ As required by the assignment guidelines, the database is designed according to 
 | **GET** | `/api/orders/summary` | Staff Only | Get daily sales analytics, revenue total, and status breakdown | `200 OK` |
 | **GET** | `/api/orders/:id` | Public | Look up order details and live status using unique Order ID | `200 OK` |
 | **POST** | `/api/orders` | Public | Place a new customer order with validated item prices | `201 Created` |
-| **PATCH** | `/api/orders/:id/status`| Staff Only | Update order status (`Pending` ➔ `Preparing` ➔ `Ready` ➔ `Collected`) | `200 OK` |
+| **PATCH** | `/api/orders/:id/status`| Staff Only | Update order status (`Pending` -> `Preparing` -> `Ready` -> `Collected`) | `200 OK` |
 
 ---
 
@@ -169,8 +169,8 @@ npm install
 # Start the Express server
 npm start
 ```
-*The backend will boot up at `http://localhost:5000`.*  
-*You can verify backend health by visiting `http://localhost:5000/api/health` in your browser.*
+*The backend will boot up at `http://localhost:5001`.*  
+*You can verify backend health by visiting `http://localhost:5001/api/health` in your browser.*
 
 ### Step 3: Run Automated Backend Tests
 In a separate terminal:
@@ -197,7 +197,7 @@ npm run dev
 
 ## 7. Staff Credentials for Evaluation
 - **Staff Password / PIN:** `barista2024`
-- You can access the staff dashboard by clicking the **"🔐 Staff Portal"** button in the navigation bar.
+- You can access the staff dashboard by clicking the **"Staff Portal"** button in the navigation bar.
 
 ---
 
@@ -205,14 +205,14 @@ npm run dev
 
 ### Deploying the Backend on Render
 1. Create a free account at [render.com](https://render.com).
-2. Click **New +** ➔ **Web Service** and connect your GitHub repository.
+2. Click **New +** -> **Web Service** and connect your GitHub repository.
 3. Configure the service settings:
    - **Root Directory:** `backend`
    - **Environment:** `Node`
    - **Build Command:** `npm install`
    - **Start Command:** `node server.js`
 4. Add the following **Environment Variables** in Render:
-   - `PORT`: `5000`
+   - `PORT`: `5001`
    - `STAFF_PASSWORD`: `barista2024`
    - `FRONTEND_URL`: `https://your-frontend-app.vercel.app` (or `*`)
    - `REDIS_URL`: *(Optional)* Your Upstash or Redis Cloud URL (e.g., `rediss://default:xxxxx@xxxx.upstash.io:6379`). If left blank, the backend runs in persistent file storage mode.

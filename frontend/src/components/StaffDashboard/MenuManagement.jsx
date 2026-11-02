@@ -142,8 +142,8 @@ export default function MenuManagement() {
         </button>
       </div>
 
-      {actionSuccess && <div className="action-success-banner">✓ {actionSuccess}</div>}
-      {actionError && <div className="action-error-banner">⚠️ {actionError}</div>}
+      {actionSuccess && <div className="action-success-banner">{actionSuccess}</div>}
+      {actionError && <div className="action-error-banner">{actionError}</div>}
 
       {/* Menu Table */}
       {loading ? (
@@ -174,7 +174,7 @@ export default function MenuManagement() {
                     <span className="category-pill">{item.category}</span>
                   </td>
                   <td className="price-cell">
-                    <strong>${Number(item.price).toFixed(2)}</strong>
+                    <strong>M{Number(item.price).toFixed(2)}</strong>
                   </td>
                   <td>
                     <button
@@ -182,7 +182,7 @@ export default function MenuManagement() {
                       onClick={() => handleToggleAvailability(item)}
                       title="Click to toggle availability"
                     >
-                      {item.available ? '● In Stock' : '○ Sold Out'}
+                      {item.available ? 'In Stock' : 'Sold Out'}
                     </button>
                   </td>
                   <td className="actions-cell">
@@ -191,14 +191,14 @@ export default function MenuManagement() {
                       onClick={() => handleOpenEdit(item)}
                       title="Edit Item"
                     >
-                      ✏️ Edit
+                      Edit
                     </button>
                     <button
                       className="btn-action-delete"
                       onClick={() => handleDeleteItem(item)}
                       title="Delete Item"
                     >
-                      🗑️
+                      Delete
                     </button>
                   </td>
                 </tr>
@@ -247,12 +247,12 @@ export default function MenuManagement() {
                 </div>
 
                 <div className="form-group">
-                  <label>Price ($) *</label>
+                  <label>Price (Maloti - M) *</label>
                   <input
                     type="number"
-                    step="0.05"
-                    min="0.10"
-                    placeholder="3.50"
+                    step="0.50"
+                    min="1.00"
+                    placeholder="35.00"
                     value={formData.price}
                     onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                     required

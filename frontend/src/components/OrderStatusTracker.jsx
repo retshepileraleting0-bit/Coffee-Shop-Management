@@ -55,7 +55,6 @@ export default function OrderStatusTracker({ initialOrderId = '' }) {
     <div className="tracker-page">
       <div className="tracker-card">
         <div className="tracker-header">
-          <span className="tracker-icon">☕</span>
           <h2>Track Your Coffee Order</h2>
           <p>Enter your order number below to check its real-time preparation status.</p>
         </div>
@@ -80,7 +79,7 @@ export default function OrderStatusTracker({ initialOrderId = '' }) {
           </button>
         </form>
 
-        {error && <div className="tracker-error">⚠️ {error}</div>}
+        {error && <div className="tracker-error">{error}</div>}
 
         {/* Order Details and Visual Status Tracker */}
         {orderData && (
@@ -95,7 +94,7 @@ export default function OrderStatusTracker({ initialOrderId = '' }) {
                 onClick={() => handleLookup(orderData.id)}
                 title="Check for newest status"
               >
-                🔄 Refresh
+                Refresh
               </button>
             </div>
 
@@ -124,10 +123,10 @@ export default function OrderStatusTracker({ initialOrderId = '' }) {
 
             {/* Current Status Banner */}
             <div className={`status-callout status-${orderData.status.toLowerCase()}`}>
-              {orderData.status === 'Pending' && '⏳ Order received. It will be sent to the barista shortly.'}
-              {orderData.status === 'Preparing' && '🔥 Your coffee & treats are being freshly brewed right now!'}
-              {orderData.status === 'Ready' && '🎉 Your order is ready for pickup at the counter!'}
-              {orderData.status === 'Collected' && '✨ Order complete! Enjoy your coffee and have a great day.'}
+              {orderData.status === 'Pending' && 'Order received. It will be sent to the barista shortly.'}
+              {orderData.status === 'Preparing' && 'Your coffee and treats are being freshly brewed right now.'}
+              {orderData.status === 'Ready' && 'Your order is ready for pickup at the counter.'}
+              {orderData.status === 'Collected' && 'Order complete. Enjoy your coffee and have a great day.'}
             </div>
 
             {/* Order Items Breakdown */}
@@ -139,13 +138,13 @@ export default function OrderStatusTracker({ initialOrderId = '' }) {
                     <span>
                       {item.quantity}x {item.name}
                     </span>
-                    <span>${Number(item.lineTotal || item.price * item.quantity).toFixed(2)}</span>
+                    <span>M{Number(item.lineTotal || item.price * item.quantity).toFixed(2)}</span>
                   </li>
                 ))}
               </ul>
               <div className="tracker-order-total">
                 <span>Total Paid:</span>
-                <strong>${Number(orderData.totalAmount).toFixed(2)}</strong>
+                <strong>M{Number(orderData.totalAmount).toFixed(2)}</strong>
               </div>
             </div>
 

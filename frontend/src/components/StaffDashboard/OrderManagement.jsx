@@ -68,11 +68,11 @@ export default function OrderManagement() {
           </p>
         </div>
         <button className="btn-refresh-orders" onClick={loadOrders} disabled={loading}>
-          🔄 Refresh
+          Refresh
         </button>
       </div>
 
-      {actionError && <div className="action-error-banner">⚠️ {actionError}</div>}
+      {actionError && <div className="action-error-banner">{actionError}</div>}
 
       {/* Status Filter Tabs */}
       <div className="status-filter-pills">
@@ -92,7 +92,6 @@ export default function OrderManagement() {
         <div className="panel-loading">Fetching customer orders...</div>
       ) : orders.length === 0 ? (
         <div className="empty-orders-state">
-          <span>☕</span>
           <h4>No orders in this category</h4>
           <p>New customer orders will appear here automatically.</p>
         </div>
@@ -109,8 +108,8 @@ export default function OrderManagement() {
                   <span className="order-id-badge">{order.id}</span>
                   <span className="order-type-tag">
                     {order.orderType === 'Dine-in'
-                      ? `🍽️ Table ${order.tableNumber || 'N/A'}`
-                      : '🥡 Takeaway'}
+                      ? `Table ${order.tableNumber || 'N/A'}`
+                      : 'Takeaway'}
                   </span>
                 </div>
                 <span className={`status-badge status-${order.status.toLowerCase()}`}>
@@ -140,7 +139,7 @@ export default function OrderManagement() {
                     <span className="item-qty-badge">{item.quantity}x</span>
                     <span className="item-name-text">{item.name}</span>
                     <span className="item-price-text">
-                      ${Number(item.lineTotal || item.price * item.quantity).toFixed(2)}
+                      M{Number(item.lineTotal || item.price * item.quantity).toFixed(2)}
                     </span>
                   </div>
                 ))}
@@ -149,7 +148,7 @@ export default function OrderManagement() {
               {/* Total */}
               <div className="order-card-total">
                 <span>Total Due</span>
-                <strong>${Number(order.totalAmount).toFixed(2)}</strong>
+                <strong>M{Number(order.totalAmount).toFixed(2)}</strong>
               </div>
 
               {/* Status Progression Workflow Actions */}
@@ -160,7 +159,7 @@ export default function OrderManagement() {
                     disabled={updatingId === order.id}
                     onClick={() => handleStatusChange(order.id, 'Preparing')}
                   >
-                    Start Preparing ➔
+                    Start Preparing
                   </button>
                 )}
 
@@ -170,7 +169,7 @@ export default function OrderManagement() {
                     disabled={updatingId === order.id}
                     onClick={() => handleStatusChange(order.id, 'Ready')}
                   >
-                    Mark Ready for Pickup ➔
+                    Mark Ready for Pickup
                   </button>
                 )}
 
@@ -180,13 +179,13 @@ export default function OrderManagement() {
                     disabled={updatingId === order.id}
                     onClick={() => handleStatusChange(order.id, 'Collected')}
                   >
-                    Mark Collected / Complete ✓
+                    Mark Collected / Complete
                   </button>
                 )}
 
                 {order.status === 'Collected' && (
                   <div className="order-completed-indicator">
-                    ✓ Completed & Picked Up
+                    Completed & Picked Up
                   </div>
                 )}
 

@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * CHECKOUT MODAL COMPONENT
- * ============================================================================
- * Handles customer checkout: collects customer details, sends POST /api/orders
- * request using Fetch API, and displays confirmed order number.
- */
-
+// Checkout modal and order confirmation
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { placeCustomerOrder } from '../services/api';

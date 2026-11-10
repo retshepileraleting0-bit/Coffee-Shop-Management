@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * MENU ITEM CARD COMPONENT
- * ============================================================================
- * Displays a single coffee or pastry item with its name, description, price,
- * availability status, and Add-to-Cart action.
- */
-
+// Menu item card
 import React, { useState } from 'react';
 import { useCart } from '../context/CartContext';
 

@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * NAVBAR COMPONENT
- * ============================================================================
- * Top navigation bar featuring the Coffee Shop branding, section switches,
- * live backend status indicator, and cart toggle badge.
- */
-
+// Top navigation bar component
 import React, { useEffect, useState } from 'react';
 import { useCart } from '../context/CartContext';
 import { useAuth } from '../context/AuthContext';

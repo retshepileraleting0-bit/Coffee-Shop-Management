@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * ORDER STATUS TRACKER COMPONENT
- * ============================================================================
- * Allows customers to check the real-time preparation status of their order
- * using their unique Order Number (e.g. 'ORD-1234').
- */
-
+// Order status tracker component
 import React, { useState, useEffect } from 'react';
 import { getOrderById } from '../services/api';
 

@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * CART CONTEXT: State Management for Shopping Cart
- * ============================================================================
- * Manages items added by the customer, quantities, subtotal, tax and total.
- * Persists cart state in localStorage for a smooth user experience.
- */
-
+// Shopping cart state context
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const CartContext = createContext();

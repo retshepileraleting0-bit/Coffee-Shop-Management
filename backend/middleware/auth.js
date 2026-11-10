@@ -1,15 +1,4 @@
-/**
- * ============================================================================
- * AUTHENTICATION MIDDLEWARE: Staff Protection
- * ============================================================================
- * Protects staff-only routes (such as adding/editing/deleting menu items and
- * viewing/updating customer orders).
- *
- * Checks for a Bearer token or 'x-staff-token' header that matches the
- * active staff token generated at /api/auth/login.
- */
-
-// Simple shared secret / token generator for human-like, easy-to-understand auth
+// Staff authentication middleware
 const STAFF_PASSWORD = process.env.STAFF_PASSWORD || 'barista2024';
 
 /**

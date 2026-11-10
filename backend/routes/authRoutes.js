@@ -1,10 +1,4 @@
-/**
- * ============================================================================
- * AUTHENTICATION ROUTES
- * ============================================================================
- * Endpoints for staff login and session token validation.
- */
-
+// Staff authentication routes
 const express = require('express');
 const router = express.Router();
 const { getExpectedToken, requireStaffAuth } = require('../middleware/auth');

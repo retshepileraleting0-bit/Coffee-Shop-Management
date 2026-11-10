@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * AUTH CONTEXT: State Management for Staff Authentication
- * ============================================================================
- * Handles staff login state, storing session token in localStorage so staff
- * remain logged in across page refreshes.
- */
-
+// Staff authentication state context
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { loginStaff, verifyStaffSession } from '../services/api';
 

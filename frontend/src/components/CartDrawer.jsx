@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * CART DRAWER COMPONENT
- * ============================================================================
- * Side drawer displaying current cart items, allowing quantity adjustments,
- * item removal, subtotal calculation, and triggering checkout.
- */
-
+// Slide-out shopping cart drawer
 import React from 'react';
 import { useCart } from '../context/CartContext';
 

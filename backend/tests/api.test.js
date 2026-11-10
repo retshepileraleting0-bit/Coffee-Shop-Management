@@ -1,19 +1,5 @@
-/**
- * ============================================================================
- * BACKEND API AUTOMATED TESTS
- * ============================================================================
- * Uses Node.js built-in test runner ('node:test') and assertion library ('node:assert').
- * Runs with: npm test (or node --test tests/api.test.js)
- *
- * Tests all core requirements:
- *   1. Health check (/api/health)
- *   2. Menu retrieval (/api/menu)
- *   3. Staff authentication protection (/api/auth/login)
- *   4. Menu item creation and deletion (/api/menu)
- *   5. Order placement, lookup, and status lifecycle (/api/orders)
- *   6. Daily summary reporting (/api/orders/summary)
- */
-
+// API Integration Tests
+// Run with: npm test
 const test = require('node:test');
 const assert = require('node:assert/strict');
 const http = require('node:http');

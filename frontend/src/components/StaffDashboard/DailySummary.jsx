@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * STAFF DAILY SUMMARY COMPONENT
- * ============================================================================
- * Provides store managers and staff with daily performance metrics:
- * Total revenue, order volume, live status distributions, and top selling items.
- */
-
+// Daily sales summary and analytics
 import React, { useState, useEffect } from 'react';
 import { getDailySummary } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';

@@ -1,11 +1,3 @@
-/**
- * ============================================================================
- * ROOT APP COMPONENT
- * ============================================================================
- * Orchestrates views, modal states, and contextual providers for the
- * Coffee Shop Management System.
- */
-
 import React, { useState } from 'react';
 import { CartProvider } from './context/CartContext';
 import { AuthProvider } from './context/AuthContext';
@@ -65,21 +57,9 @@ export default function App() {
           {/* Application Footer */}
           <footer className="app-footer">
             <div className="footer-content">
-              <div className="footer-brand">
-                <h3>AromaCraft Coffee & Roastery</h3>
-                <p>Full-Stack Web Application Assignment (BIWA2110)</p>
-              </div>
-
-              <div className="footer-tech-stack">
-                <span className="tech-badge">React 18</span>
-                <span className="tech-badge">Express.js REST API</span>
-                <span className="tech-badge">Fetch API</span>
-                <span className="tech-badge">Key-Value NoSQL (Redis)</span>
-              </div>
-
-              <p className="footer-copyright">
-                Developed for BSc. in Information Technology & Software Engineering.
-              </p>
+              <h3 className="footer-brand">AromaCraft Coffee & Roastery</h3>
+              <p className="footer-location">Kingsway Road, Maseru, Lesotho | Open Daily 07:00 - 18:00</p>
+              <p className="footer-copyright">&copy; {new Date().getFullYear()} AromaCraft Coffee & Roastery. All rights reserved.</p>
             </div>
           </footer>
         </div>

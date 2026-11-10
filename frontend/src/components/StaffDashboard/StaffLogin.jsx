@@ -1,10 +1,4 @@
-/**
- * ============================================================================
- * STAFF LOGIN COMPONENT
- * ============================================================================
- * Staff authentication screen protecting all administrative and barista features.
- */
-
+// Staff login component
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 

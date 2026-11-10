@@ -1,25 +1,11 @@
-/**
- * ============================================================================
- * ORDERS REST API ROUTES
- * ============================================================================
- * Handles customer order placement, order lookup, status lifecycle updates,
- * and daily sales summaries.
- *
- * Endpoints:
- *   GET    /api/orders             - Retrieve all orders (staff only)
- *   GET    /api/orders/summary     - Basic daily summary and totals (staff only)
- *   GET    /api/orders/:id         - Retrieve a specific order by ID (customer & staff)
- *   POST   /api/orders             - Place a new order (customer)
- *   PATCH  /api/orders/:id/status  - Update order status (staff only)
- */
-
+// Orders API routes
 const express = require('express');
 const router = express.Router();
 const crypto = require('crypto');
 const db = require('../config/db');
 const { requireStaffAuth } = require('../middleware/auth');
 
-// Valid status lifecycle values as specified in project requirements
+// Allowed order statuses
 const VALID_STATUSES = ['Pending', 'Preparing', 'Ready', 'Collected'];
 
 /**

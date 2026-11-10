@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * STAFF MENU MANAGEMENT COMPONENT
- * ============================================================================
- * Allows staff to add new menu items, edit existing items, toggle stock
- * availability, and delete items from the Key-Value NoSQL database.
- */
-
+// Staff menu management component
 import React, { useState, useEffect } from 'react';
 import { getMenuItems, createMenuItem, updateMenuItem, deleteMenuItem } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';

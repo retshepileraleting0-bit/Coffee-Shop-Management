@@ -1,11 +1,4 @@
-/**
- * ============================================================================
- * MENU LIST COMPONENT
- * ============================================================================
- * Customer-facing menu page. Fetches items from the REST API using the
- * Fetch API service, provides category filtering and live search.
- */
-
+// Customer menu browsing component
 import React, { useEffect, useState } from 'react';
 import { getMenuItems } from '../services/api';
 import MenuItemCard from './MenuItemCard';

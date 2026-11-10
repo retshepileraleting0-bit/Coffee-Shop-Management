@@ -1,22 +1,5 @@
-/**
- * ============================================================================
- * DATABASE ADAPTER: Key-Value NoSQL Store
- * ============================================================================
- * This module implements a Key-Value NoSQL storage layer for the Coffee Shop.
- * In a Key-Value database (such as Redis):
- *   - Each piece of data is identified by a unique key (e.g., 'menu:menu-1', 'order:ORD-101')
- *   - The value is stored as a serialized JSON string.
- *
- * To ensure this application runs smoothly both in cloud environments (Render + Redis)
- * and on local machines without requiring a local Redis server installation,
- * this adapter provides dual-mode persistence:
- *   1. Primary: Redis (via ioredis) if REDIS_URL is provided or Redis is running.
- *   2. Fallback: Persistent Key-Value file store (data/kv-store.json) on disk.
- *
- * Both modes share the exact same Key-Value API and ensure changes persist
- * after server restarts.
- */
-
+// Key-Value NoSQL database adapter
+// Supports Redis when REDIS_URL is provided, or falls back to local JSON file storage (data/kv-store.json)
 const fs = require('fs');
 const path = require('path');
 const Redis = require('ioredis');

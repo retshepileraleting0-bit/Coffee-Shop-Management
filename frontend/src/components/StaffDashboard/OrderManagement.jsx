@@ -1,12 +1,4 @@
-/**
- * ============================================================================
- * STAFF ORDER MANAGEMENT COMPONENT
- * ============================================================================
- * Real-time order kitchen display and status manager.
- * Allows baristas to track incoming orders, see customer notes/table numbers,
- * and update order statuses: Pending -> Preparing -> Ready -> Collected.
- */
-
+// Staff order management and kitchen display
 import React, { useState, useEffect } from 'react';
 import { getAllOrders, updateOrderStatus } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';

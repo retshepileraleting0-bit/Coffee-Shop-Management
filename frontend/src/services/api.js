@@ -1,12 +1,6 @@
 /**
- * ============================================================================
- * FETCH API SERVICE MODULE
- * ============================================================================
- * Handles all HTTP requests between the React frontend and the Express REST API.
- * Uses the browser's native Fetch API (window.fetch) as required by BIWA2110.
- *
- * All functions include response status validation, proper headers, and
- * human-readable error messages.
+ * API Service Module
+ * Handles HTTP requests to the backend using native Fetch API.
  */
 
 // Base URL configured via environment variable (or defaults to local backend)
@@ -46,25 +40,12 @@ async function request(endpoint, options = {}) {
   }
 }
 
-// ============================================================================
-// SYSTEM & HEALTH API
-// ============================================================================
-
-/**
- * Check backend server availability
- */
+// Health check
 export async function checkBackendHealth() {
   return await request('/health');
 }
 
-// ============================================================================
-// MENU API CALLS
-// ============================================================================
-
-/**
- * Fetch all menu items, with optional category filter
- * @param {string} category - e.g., 'Hot Coffee', 'Pastries'
- */
+// Menu API
 export async function getMenuItems(category = '') {
   const query = category && category !== 'All' ? `?category=${encodeURIComponent(category)}` : '';
   const result = await request(`/menu${query}`);
@@ -122,14 +103,7 @@ export async function deleteMenuItem(id, token) {
   return result;
 }
 
-// ============================================================================
-// ORDERS API CALLS
-// ============================================================================
-
-/**
- * Place a new customer order
- * @param {object} orderData - { customerName, orderType, tableNumber, notes, items }
- */
+// Orders API
 export async function placeCustomerOrder(orderData) {
   const result = await request('/orders', {
     method: 'POST',
@@ -186,14 +160,7 @@ export async function getDailySummary(token) {
   return result.data;
 }
 
-// ============================================================================
-// STAFF AUTHENTICATION API CALLS
-// ============================================================================
-
-/**
- * Log in as staff using password
- * @param {string} password
- */
+// Staff auth API
 export async function loginStaff(password) {
   const result = await request('/auth/login', {
     method: 'POST',

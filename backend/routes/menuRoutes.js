@@ -1,18 +1,4 @@
-/**
- * ============================================================================
- * MENU REST API ROUTES
- * ============================================================================
- * Implements CRUD operations for coffee shop menu items backed by the
- * Key-Value NoSQL database.
- *
- * Endpoints:
- *   GET    /api/menu       - Retrieve all menu items (public)
- *   GET    /api/menu/:id   - Retrieve one menu item (public)
- *   POST   /api/menu       - Add a new menu item (staff only)
- *   PUT    /api/menu/:id   - Update an existing menu item (staff only)
- *   DELETE /api/menu/:id   - Delete a menu item (staff only)
- */
-
+// Menu API routes
 const express = require('express');
 const router = express.Router();
 const crypto = require('crypto');

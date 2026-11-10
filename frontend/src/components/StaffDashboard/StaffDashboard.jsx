@@ -1,13 +1,4 @@
-/**
- * ============================================================================
- * STAFF DASHBOARD MAIN WRAPPER
- * ============================================================================
- * Hosts the sub-views for staff:
- *   1. Orders Management (Kitchen Display)
- *   2. Menu Management (Add, Edit, Stock, Delete)
- *   3. Daily Summary & Analytics
- */
-
+// Staff dashboard component
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import StaffLogin from './StaffLogin';

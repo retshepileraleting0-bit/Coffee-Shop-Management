@@ -1,16 +1,4 @@
-/**
- * ============================================================================
- * COFFEE SHOP MANAGEMENT SYSTEM - BACKEND SERVER
- * ============================================================================
- * Main entry point for the Express.js application.
- *
- * Technologies:
- *   - Express.js (REST API framework)
- *   - CORS (Cross-Origin Resource Sharing)
- *   - Key-Value NoSQL Database (Redis / Persistent File Storage)
- *   - Native Node.js crypto & modules
- */
-
+// Coffee Shop Backend Server
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
@@ -25,11 +13,7 @@ const { notFoundHandler, globalErrorHandler } = require('./middleware/errorHandl
 const app = express();
 const PORT = process.env.PORT || 5001;
 
-// ============================================================================
-// MIDDLEWARE CONFIGURATION
-// ============================================================================
-
-// Enable CORS for frontend applications (local Vite dev server and deployed domain)
+// CORS configuration
 const corsOptions = {
   origin: process.env.FRONTEND_URL || '*',
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
@@ -37,21 +21,18 @@ const corsOptions = {
 };
 app.use(cors(corsOptions));
 
-// Body parser middleware: parse incoming JSON and URL-encoded bodies
+// Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Request logger for debugging and transparency
+// Request logger
 app.use((req, res, next) => {
   const timestamp = new Date().toLocaleTimeString();
   console.log(`[${timestamp}] ${req.method} ${req.originalUrl}`);
   next();
 });
 
-// ============================================================================
-// SYSTEM & HEALTH CHECK ENDPOINT
-// ============================================================================
-// Required by Section 5 and Section 9 ("verify that /api/health works")
+// Health check endpoint
 app.get('/api/health', (req, res) => {
   res.json({
     status: 'ok',
@@ -76,22 +57,16 @@ app.get('/', (req, res) => {
   });
 });
 
-// ============================================================================
-// ROUTE MOUNTING
-// ============================================================================
+// Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/menu', menuRoutes);
 app.use('/api/orders', orderRoutes);
 
-// ============================================================================
-// ERROR HANDLING MIDDLEWARE
-// ============================================================================
+// Error handlers
 app.use(notFoundHandler);
 app.use(globalErrorHandler);
 
-// ============================================================================
-// SERVER INITIALIZATION
-// ============================================================================
+// Start server
 async function startServer() {
   try {
     // 1. Connect to Key-Value database and seed initial menu if required

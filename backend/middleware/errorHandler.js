@@ -1,10 +1,4 @@
-/**
- * ============================================================================
- * ERROR HANDLING MIDDLEWARE
- * ============================================================================
- * Catches any unhandled errors or invalid routes and returns standard JSON.
- */
-
+// Error handling middleware
 // 404 Not Found Handler
 function notFoundHandler(req, res, next) {
   res.status(404).json({

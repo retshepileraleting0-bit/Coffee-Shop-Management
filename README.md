@@ -3,9 +3,8 @@
 > **Faculty:** Faculty of Information & Communication Technology  
 > **Departments:** BSc. in Information Technology / BSc. in Software Engineering and Multimedia  
 > **Assignment:** Full-Stack Group Assignment (40%)  
-> **Lecturers:** Mr. Mofolo / Mr. Takalimane  
+> **Lecturers:** Mr. Tshepo Mofolo  
 
----
 
 ## 1. Project Overview & Scenario
 **AromaCraft** is a modern, responsive full-stack web application designed for an artisanal coffee shop based in Maseru, Lesotho. Before this system, staff took orders manually using pen and paper, which caused miscommunications, price discrepancies, and confusion over which orders were pending, currently being prepared, or ready for customer collection.
@@ -15,7 +14,6 @@ This application provides:
 2. **Staff Kitchen & Manager Portal**: Secure dashboard protected with staff credentials allowing baristas to view incoming orders in real time, advance orders through their lifecycle (`Pending` -> `Preparing` -> `Ready` -> `Collected`), manage menu items (create new items, edit names/prices/descriptions, toggle stock availability, and delete items), and review daily order totals and sales analytics.
 3. **Key-Value NoSQL Database**: Stores menu items and orders using unique keys and JSON values. Built with seamless dual-mode persistence (Redis for cloud hosting on Render + persistent disk storage for frictionless local evaluation).
 
----
 
 ## 2. Technology Stack
 
@@ -29,7 +27,6 @@ This application provides:
 | **Testing** | Node.js Built-in Runner (`node:test`) | Automated endpoint testing for CRUD, order workflows, and auth |
 | **Hosting** | Render (Backend) + Vercel / Netlify (Frontend) | Independent cloud deployment with environment variable configuration |
 
----
 
 ## 3. System Architecture
 
@@ -69,8 +66,6 @@ flowchart TD
     MenuRoute <--> KVAdapter
     OrderRoute <--> KVAdapter
 ```
-
----
 
 ## 4. Key-Value NoSQL Database Design
 
@@ -124,7 +119,6 @@ As required by the assignment guidelines, the database is designed according to 
 }
 ```
 
----
 
 ## 5. REST API Endpoints Specification
 
@@ -143,7 +137,6 @@ As required by the assignment guidelines, the database is designed according to 
 | **POST** | `/api/orders` | Public | Place a new customer order with validated item prices | `201 Created` |
 | **PATCH** | `/api/orders/:id/status`| Staff Only | Update order status (`Pending` -> `Preparing` -> `Ready` -> `Collected`) | `200 OK` |
 
----
 
 ## 6. Local Setup and Installation
 
@@ -193,13 +186,11 @@ npm run dev
 ```
 *The React frontend will be accessible at `http://localhost:5173`.*
 
----
 
 ## 7. Staff Credentials for Evaluation
 - **Staff Password / PIN:** `barista2024`
 - You can access the staff dashboard by clicking the **"Staff Portal"** button in the navigation bar.
 
----
 
 ## 8. Deployment Guide
 
@@ -229,8 +220,6 @@ npm run dev
 4. Add the **Environment Variable**:
    - `VITE_API_BASE_URL`: `https://your-backend.onrender.com/api`
 5. Deploy and test the live website URL.
-
----
 
 ## 9. Group Members & Contribution
 

@@ -223,11 +223,11 @@ npm run dev
 
 ## 9. Group Members & Contribution
 
-| Student Name | Student ID | Department | Main Contribution |
-| :--- | :--- | :--- | :--- |
-| **Member 1 (Lead)** | *[Student ID]* | Information Technology | Backend Express REST API architecture, routes, database adapter |
-| **Member 2** | *[Student ID]* | Information Technology | Key-Value NoSQL database schema, automated test suite, error handling |
-| **Member 3** | *[Student ID]* | Software Engineering | React frontend user interface, menu browsing, cart context, modal flow |
-| **Member 4** | *[Student ID]* | Software Engineering | Staff dashboard, live order tracking, Fetch API integration, documentation |
+| Student Name | Student ID | Contribution |
+| :--- | :--- | :--- |
+| **Lebajoa Pone** | *901020517* | Backend Express REST API architecture, routes, database adapter |
+| **Letlotlo Motšoikha** | *901019070* | Key-Value NoSQL database schema, automated test suite, error handling |
+| **Retshepile Raleting** | *901020541* | React frontend user interface, menu browsing, cart context, modal flow |
+| **Maphike Majara** | *901020513* | Staff dashboard, live order tracking, Fetch API integration, documentation |
 
 # Coffee-Shop-Management

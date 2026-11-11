@@ -241,3 +241,4 @@ npm run dev
 | **Member 3** | *[Student ID]* | Software Engineering | React frontend user interface, menu browsing, cart context, modal flow |
 | **Member 4** | *[Student ID]* | Software Engineering | Staff dashboard, live order tracking, Fetch API integration, documentation |
 
+# Coffee-Shop-Management

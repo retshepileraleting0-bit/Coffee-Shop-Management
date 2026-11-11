@@ -1,8 +1,8 @@
-# AromaCraft - Coffee Shop Management Web Application
-> **Course:** BIWA2110 — Web Application Development  
-> **Faculty:** Faculty of Information & Communication Technology  
-> **Departments:** BSc. in Information Technology / BSc. in Software Engineering and Multimedia  
-> **Assignment:** Full-Stack Group Assignment (40%)  
+# AromaCraft  Coffee Shop Management Web Application
+> **Course:** Web Application Development  
+> **Faculty:** FICT  
+> **Departments:** BSc.IT  Year 2 Semster 1 
+> **Assignment:** Group Assignment 
 > **Lecturers:** Mr. Tshepo Mofolo  
 
 

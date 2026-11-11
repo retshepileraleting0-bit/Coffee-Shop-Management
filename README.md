@@ -1,8 +1,8 @@
 # AromaCraft  Coffee Shop Management Web Application
 > **Course:** Web Application Development  
 > **Faculty:** FICT  
-> **Departments:** BSc.IT  Year 2 Semster 1 
-> **Assignment:** Group Assignment 
+> **Departments:** BSc.IT  Year 2 Semester 1  
+> **Assignment:** Group Assignment  
 > **Lecturers:** Mr. Tshepo Mofolo  
 
 

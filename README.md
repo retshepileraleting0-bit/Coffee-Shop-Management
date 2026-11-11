@@ -189,39 +189,10 @@ npm run dev
 
 ## 7. Staff Credentials for Evaluation
 - **Staff Password / PIN:** `barista2024`
-- You can access the staff dashboard by clicking the **"Staff Portal"** button in the navigation bar.
+- You can access the staff dashboard by clicking the **"Staff Dashboard"** button in the navigation bar.
 
 
-## 8. Deployment Guide
-
-### Deploying the Backend on Render
-1. Create a free account at [render.com](https://render.com).
-2. Click **New +** -> **Web Service** and connect your GitHub repository.
-3. Configure the service settings:
-   - **Root Directory:** `backend`
-   - **Environment:** `Node`
-   - **Build Command:** `npm install`
-   - **Start Command:** `node server.js`
-4. Add the following **Environment Variables** in Render:
-   - `PORT`: `5001`
-   - `STAFF_PASSWORD`: `barista2024`
-   - `FRONTEND_URL`: `https://your-frontend-app.vercel.app` (or `*`)
-   - `REDIS_URL`: *(Optional)* Your Upstash or Redis Cloud URL (e.g., `rediss://default:xxxxx@xxxx.upstash.io:6379`). If left blank, the backend runs in persistent file storage mode.
-5. Deploy and verify that `https://your-backend.onrender.com/api/health` returns status `ok`.
-
-### Deploying the Frontend on Vercel or Netlify
-1. Create a free account on [vercel.com](https://vercel.com) or [netlify.com](https://netlify.com).
-2. Import your GitHub repository.
-3. Configure the build settings:
-   - **Framework Preset:** `Vite`
-   - **Root Directory:** `frontend`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `dist`
-4. Add the **Environment Variable**:
-   - `VITE_API_BASE_URL`: `https://your-backend.onrender.com/api`
-5. Deploy and test the live website URL.
-
-## 9. Group Members & Contribution
+## 8. Group Members & Contribution
 
 | Student Name | Student ID | Contribution |
 | :--- | :--- | :--- |
@@ -230,4 +201,3 @@ npm run dev
 | **Retshepile Raleting** | *901020541* | React frontend user interface, menu browsing, cart context, modal flow |
 | **Maphike Majara** | *901020513* | Staff dashboard, live order tracking, Fetch API integration, documentation |
 
-# Coffee-Shop-Management

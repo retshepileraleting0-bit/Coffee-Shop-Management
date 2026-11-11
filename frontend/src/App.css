@@ -1,6 +1,3 @@
-/* ==========================================================================
-   AROMACRAFT COFFEE SHOP - MODERN ARTISANAL STYLING
-   ========================================================================== */
 
 :root {
   --primary: #4A3022;
@@ -70,9 +67,9 @@ button, input, select, textarea {
   padding: 24px 20px 60px;
 }
 
-/* ==========================================================================
+/* 
    NAVBAR
-   ========================================================================== */
+*/
 .navbar-container {
   background: var(--surface);
   border-bottom: 1px solid var(--border);
@@ -238,9 +235,9 @@ button, input, select, textarea {
   cursor: pointer;
 }
 
-/* ==========================================================================
+/*
    HERO SECTION
-   ========================================================================== */
+*/
 .hero-section {
   background: linear-gradient(135deg, #3A2318 0%, #1E130D 100%);
   color: #FFFFFF;
@@ -292,9 +289,9 @@ button, input, select, textarea {
   line-height: 1.6;
 }
 
-/* ==========================================================================
+/* 
    MENU CONTROLS (TABS & SEARCH)
-   ========================================================================== */
+ */
 .menu-controls-wrapper {
   display: flex;
   flex-direction: column;
@@ -382,9 +379,9 @@ button, input, select, textarea {
   cursor: pointer;
 }
 
-/* ==========================================================================
+/* 
    MENU GRID & ITEM CARDS
-   ========================================================================== */
+ */
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -563,9 +560,9 @@ button, input, select, textarea {
   color: #FFFFFF;
 }
 
-/* ==========================================================================
+/* 
    CART DRAWER
-   ========================================================================== */
+*/
 .cart-backdrop {
   position: fixed;
   inset: 0;
@@ -809,9 +806,9 @@ button, input, select, textarea {
   background: var(--primary-light);
 }
 
-/* ==========================================================================
+/* 
    MODALS (CHECKOUT & CONFIRMATION)
-   ========================================================================== */
+*/
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -976,9 +973,9 @@ button, input, select, textarea {
   background: var(--primary-light);
 }
 
-/* ==========================================================================
+/* 
    ORDER CONFIRMATION VIEW
-   ========================================================================== */
+*/
 .order-confirmation-content {
   padding: 32px 24px;
   text-align: center;
@@ -1099,9 +1096,9 @@ button, input, select, textarea {
   cursor: pointer;
 }
 
-/* ==========================================================================
+/* 
    ORDER STATUS TRACKER
-   ========================================================================== */
+*/
 .tracker-page {
   max-width: 680px;
   margin: 20px auto 40px;
@@ -1346,9 +1343,9 @@ button, input, select, textarea {
   border-radius: var(--radius-sm);
 }
 
-/* ==========================================================================
+/* 
    STAFF PORTAL & DASHBOARD
-   ========================================================================== */
+ */
 .staff-login-container {
   max-width: 420px;
   margin: 40px auto;
@@ -1633,9 +1630,9 @@ button, input, select, textarea {
   cursor: pointer;
 }
 
-/* ==========================================================================
+/* 
    ORDERS GRID (KITCHEN DISPLAY)
-   ========================================================================== */
+    */
 .status-filter-pills {
   display: flex;
   gap: 8px;
@@ -1850,9 +1847,9 @@ button, input, select, textarea {
   border: 1px solid var(--border);
 }
 
-/* ==========================================================================
+/* 
    DAILY SUMMARY & ANALYTICS
-   ========================================================================== */
+ */
 .metrics-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1989,9 +1986,9 @@ button, input, select, textarea {
   margin-top: 10px;
 }
 
-/* ==========================================================================
+/* 
    FEEDBACK & UTILITIES
-   ========================================================================== */
+*/
 .action-success-banner {
   background: var(--success-bg);
   color: var(--success);
@@ -2076,9 +2073,9 @@ button, input, select, textarea {
   cursor: pointer;
 }
 
-/* ==========================================================================
+/* 
    FOOTER
-   ========================================================================== */
+ */
 .app-footer {
   background: var(--primary-dark);
   color: #D6CCC2;
@@ -2131,9 +2128,9 @@ button, input, select, textarea {
   color: #8C7E74;
 }
 
-/* ==========================================================================
+/* 
    RESPONSIVE MEDIA QUERIES
-   ========================================================================== */
+*/
 @media (max-width: 768px) {
   .navbar-content {
     flex-wrap: wrap;

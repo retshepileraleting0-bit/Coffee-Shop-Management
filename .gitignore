@@ -19,11 +19,9 @@ yarn-error.log*
 dist/
 build/
 
-# Operating System and Office temp files
+# Operating System files
 .DS_Store
 Thumbs.db
-~$*
-*.tmp
 
 # IDE and Editor files
 .vscode/
@@ -31,3 +29,5 @@ Thumbs.db
 *.swp
 *.swo
 
+# Local key-value data file (production uses Redis via REDIS_URL)
+backend/data/kv-store.json

@@ -129,9 +129,7 @@ export default function DailySummary() {
           </div>
 
           <div className="analytics-footer-meta">
-            <small>
-              Report generated at: {new Date(summary.generatedAt).toLocaleString()}
-            </small>
+           
           </div>
         </div>
       ) : null}
